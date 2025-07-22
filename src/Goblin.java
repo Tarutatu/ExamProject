@@ -1,6 +1,6 @@
 public class Goblin extends Monster{
-    public Goblin(String name, int hp) {
-        super(name, hp);
+    public Goblin(String name, int hp, char suffix) {
+        super(name, hp, suffix);
     }
     public String getName() {
         return this.name;

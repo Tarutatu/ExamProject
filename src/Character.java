@@ -15,14 +15,10 @@ public abstract class Character implements Creature{
         return this.hp;
     }
     public void setHp(int hp) {
-        this.hp = hp;
+        this.hp = Math.max(hp, 0);
     }
     public final boolean isAlive(){
-        if (this.hp > 0) {
-            return true;
-        }else{
-            return false;
-        }
+        return this.hp > 0;
     }
     public void showStatus(){
         System.out.println(this.name + "：HP" + this.hp);
