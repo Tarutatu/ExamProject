@@ -10,9 +10,9 @@ public class GameMaster {
             allyParty.add(new Wizard("魔法使い",60,20));
             allyParty.add(new Thief("盗賊",70));
 
-            enemyParty.add(new Matango("お化けキノコ",45));
-            enemyParty.add(new Goblin("ゴブリン",50));
-            enemyParty.add(new Slime("スライム",40));
+            enemyParty.add(new Matango("お化けキノコ",45,'A'));
+            enemyParty.add(new Goblin("ゴブリン",50,'A'));
+            enemyParty.add(new Slime("スライム",40,'A'));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
