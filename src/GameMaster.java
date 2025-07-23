@@ -17,6 +17,7 @@ public class GameMaster {
             System.out.println(e.getMessage());
         }
 
+
         System.out.println("---味方パーティ---");
         for(Character character : allyParty) {
             character.showStatus();
