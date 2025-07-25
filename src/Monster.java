@@ -10,26 +10,38 @@ public abstract class Monster implements Creature{
         this.hp = hp;
         this.suffix = suffix;
     }
+
     public char getSuffix() {
-        return this.suffix;
+        return suffix;
     }
+
+    public void setSuffix(char suffix){
+        this.suffix = suffix;
+    }
+
+    @Override
+    public String getName(){
+        return name;
+    }
+
+    @Override
     public int getHp() {
-        return this.hp;
+        return hp;
     }
+
+    @Override
     public void setHp(int hp) {
-        if (hp < 0) {
-            throw new IllegalArgumentException("");
-        }
-        this.hp = hp;
+        this.hp = Math.max(0,hp);
     }
+
+    @Override
     public final boolean isAlive(){
-        if (this.hp > 0) {
-            return true;
-        }else{
-            return false;
-        }
+        return this.hp > 0;
     }
+
+    @Override
     public void showStatus(){
-        System.out.println(this.name + this.suffix + "：HP" + this.hp);
+    System.out.println(this.name + this.suffix + "：HP" + this.hp);
     }
+
 }

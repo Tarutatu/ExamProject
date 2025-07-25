@@ -1,13 +1,10 @@
 public class Matango extends Monster{
-    public Matango(String name, int hp, char suffix) {
-        super(name, hp,suffix);
-    }
-    public String getName() {
-        return this.name;
+    public Matango( int hp, char suffix) {
+        super("お化けキノコ", hp,suffix);
     }
     @Override
     public void attack(Creature target) {
-        System.out.println(this.name +  this.getSuffix() + "は体当たり攻撃！" + target.getName() + "に6のダメージを与えた！");
+        System.out.println(getName() +getSuffix() + "は体当たり攻撃！" + target.getName() + "に6のダメージを与えた！");
         target.setHp(target.getHp() - 6);
     }
 }

@@ -1,13 +1,10 @@
-public final class Slime extends Monster {
-    public Slime(String name, int hp,char suffix) {
-        super(name, hp ,suffix);
-    }
-    public String getName() {
-        return this.name;
+public class Slime extends Monster {
+    public Slime(int hp,char suffix) {
+        super("スライム", hp ,suffix);
     }
     @Override
     public void attack(Creature target) {
-        System.out.println(this.name + this.getSuffix() + "は体当たり攻撃！" + target.getName() + "に5のダメージを与えた！");
+        System.out.println(getName() + getSuffix() + "は体当たり攻撃！" + target.getName() + "に5のダメージを与えた！");
         target.setHp(target.getHp() -5);
     }
 }

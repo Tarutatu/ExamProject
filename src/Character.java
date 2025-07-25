@@ -8,18 +8,28 @@ public abstract class Character implements Creature{
         this.name = name;
         this.hp = hp;
     }
+
+    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
+
+    @Override
     public int getHp() {
-        return this.hp;
+        return hp;
     }
+
+    @Override
     public void setHp(int hp) {
         this.hp = Math.max(hp, 0);
     }
+
+    @Override
     public final boolean isAlive(){
         return this.hp > 0;
     }
+
+    @Override
     public void showStatus(){
         System.out.println(this.name + "：HP" + this.hp);
     }

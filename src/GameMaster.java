@@ -10,9 +10,9 @@ public class GameMaster {
             allyParty.add(new Wizard("魔法使い",60,20));
             allyParty.add(new Thief("盗賊",70));
 
-            enemyParty.add(new Matango("お化けキノコ",45,'A'));
-            enemyParty.add(new Goblin("ゴブリン",50,'A'));
-            enemyParty.add(new Slime("スライム",40,'A'));
+            enemyParty.add(new Matango(45,'A'));
+            enemyParty.add(new Goblin(50,'A'));
+            enemyParty.add(new Slime(40,'A'));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -22,7 +22,7 @@ public class GameMaster {
         for(Character character : allyParty) {
             character.showStatus();
         }
-        System.out.println("---敵パーティ---");
+        System.out.println("---敵グループ---");
         for(Monster monster : enemyParty) {
             monster.showStatus();
         }
@@ -50,7 +50,7 @@ public class GameMaster {
             }
         }
         System.out.println("\nダメージを受けた" + allyParty.get(0).getName() + "が突然光りだした！");
-        System.out.println(allyParty.get(0).getName() + "はスーパーヒーローに変身した！");
+        System.out.println(allyParty.get(0).getName() + "はスーパーヒーローに進化した！");
         allyParty.set(0, new SuperHero((Hero)allyParty.get(0)));
         for(int i = 0; i < enemyParty.size(); i++) {
             try {
@@ -69,7 +69,7 @@ public class GameMaster {
                 System.out.println("生存状況：戦闘不能");
             }
         }
-        System.out.println("---敵パーティ最終ステータス---");
+        System.out.println("---敵グループ最終ステータス---");
         for(Monster monster : enemyParty) {
             monster.showStatus();
             if(monster.isAlive()) {
